@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" type="text/css" href="Style.css">
+  <title>Conversion Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    body, h1, h2, p, select, input {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+  function changeConversionType() {
+  let conversionType = document.getElementById("fromUnit").value;
+  let label = (conversionType === "InchToCm") ? "Enter value in inches:" : "Enter value in centimeters:";
+  document.querySelector("label[for='txtNum']").innerText = label;
+}
+
+function calculate() {
+  let conversionType = document.getElementById("fromUnit").value;
+  let value = parseFloat(document.getElementById("txtNum").value);
+
+  // Check if the entered value is a valid number
+  if (isNaN(value)) {
+    alert("Please enter a valid number.");
+    return; // Exit the function if the input is not a valid number
+  }
+
+  // Perform the conversion and display the result
+  let result = (conversionType === "InchToCm") ? value * 2.54 : value / 2.54;
+  document.getElementById("txtRes").innerText = `Result: ${result.toFixed(2)} ${conversionType === "InchToCm" ? 'cm' : 'inch'}`;
+}
+  </script>
+</head>
+
+<body id="bd2">
+  <h1 id="bd1">Conversion Calculator</h1>
+  <br />
+  <h1 id="h22">
+    <a href="HomePage.html">HOMEPAGE</a> |
+    <a href="ConversionPage.html">CONVERSION PAGE </a>|
+    <a href="ConversionCalculator.html">CONVERSION CALCULATOR</a>
+  </h1>
+  
+ <form id="conversionForm" action="" name="conversionForm" onsubmit="calculate(); return false;">
+  <br />
+  <br />
+  <div align="center">
+  <label for="txtNum" style="font-family:Times New Roman;font-size:28px">Please Enter a Number:</label>
+  <input name="txtNum" type="text" id="txtNum"  />
+  </div>
+  <br />
+  <br />
+  <div align="center">
+  <label style="font-family:Times New Roman;font-size:28px">From:</label>
+  <br />
+  <select name="fromUnit" id="fromUnit" style="font-size:14px;padding:4px 20px;font-family:Arial Black" >
+    <option value="CmToInch">CM TO INCH</option>
+    <option value="InchToCm">INCH TO CM</option>
+  </select>
+  </div>
+  <br />
+  <br />
+  <div align="center">
+  <label for="txtRes" style="font-family:Times New Roman;font-size:28px">Result:</label>
+  <br />
+  <textarea name="txtRes" id="txtRes" readonly></textarea>
+  <br />
+  <br />
+  <input type="submit" name="convert" value="Convert" style="font-size:14px;padding:4px 20px;font-family:Arial Black" />
+  </div>
+</form>
+</body>
+
+</html>

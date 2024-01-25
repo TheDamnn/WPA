@@ -1,0 +1,60 @@
+/* CSS Document */
+
+#p1
+{
+  color:#FFCCFF;
+  font-family:Segoe UI Black;
+  font-size:18px
+}
+
+h1
+{
+ font-family:Comic Sans MS;
+ text-align:center;
+ font-size:20px
+}
+#bd2 
+{
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color:#FFCCCC;
+}
+
+#s1
+{
+  margin-right: 10px;
+  text-align:center;
+  font-family:Times New Roman;
+  font-size:25px;
+}
+
+#bd1
+{
+ font-size:55px;
+ font-family:Ink Free;
+ text-align:center;
+}
+
+#h22
+{
+ font-family:Comic Sans MS;
+ text-align:right;
+ font-size:24px;
+ 
+}
+table
+{
+ font-family:constantia;
+ font-size: 15px;
+}
+
+a:visited 
+{
+  color: white; /* Change to the desired color */
+}
+input[type="submit"]:hover 
+{
+    background-color: #3498db; /* Change to the desired hover color */
+    color: #fff; /* Change to the desired text color on hover */
+    cursor: pointer;
+}
